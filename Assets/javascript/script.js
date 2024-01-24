@@ -18,13 +18,18 @@ $(document).ready(function () {
 
   // saveBtn click listener
   $(".saveBtn").on("click", function () {
-    // Get nearby values of the description in JQuery
+    // Get time-block for button clicked and text
+
+    var time = $(this).closest(".time-block").attr("id");
     var textInput = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
 
     // Save text in local storage
     localStorage.setItem(time, textInput);
   });
+
+  // TODO: Add code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements. HINT: How can the id
+  // attribute of each time-block be used to do this?
 
   function timeTracker() {
     //get current number of hours.
@@ -62,6 +67,7 @@ $(document).ready(function () {
   $("#hour15 .description").val(localStorage.getItem("hour15"));
   $("#hour16 .description").val(localStorage.getItem("hour16"));
   $("#hour17 .description").val(localStorage.getItem("hour17"));
+  $("#hour19 .description").val(localStorage.getItem("hour19"));
 
   timeTracker();
 });
@@ -74,9 +80,6 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
 });
