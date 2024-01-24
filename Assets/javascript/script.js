@@ -34,17 +34,18 @@ $(document).ready(function () {
   function timeTracker() {
     //get current number of hours.
     var timeNow = moment().hour();
-
+    // console.log(timeNow, "timeNow");
     // loop over time blocks
     $(".time-block").each(function () {
-      var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+      var blockTime = -parseInt($(this).attr("id").split("hour")[1]);
+      // console.log(blockTime, "blockTime");
 
       // To check the time and add the classes for background indicators
-      if (blockTime < timeNow) {
+      if (blockTime === timeNow) {
         $(this).removeClass("future");
         $(this).removeClass("present");
         $(this).addClass("past");
-      } else if (blockTime === timeNow) {
+      } else if (blockTime < timeNow) {
         $(this).removeClass("past");
         $(this).removeClass("future");
         $(this).addClass("present");
@@ -67,7 +68,8 @@ $(document).ready(function () {
   $("#hour15 .description").val(localStorage.getItem("hour15"));
   $("#hour16 .description").val(localStorage.getItem("hour16"));
   $("#hour17 .description").val(localStorage.getItem("hour17"));
-  $("#hour19 .description").val(localStorage.getItem("hour19"));
+  $("#hour20 .description").val(localStorage.getItem("hour20"));
+  $("#hour21 .description").val(localStorage.getItem("hour21"));
 
   timeTracker();
 });
