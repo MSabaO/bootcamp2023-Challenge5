@@ -64,7 +64,6 @@ $(document).ready(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   // Get item from local storage if any
-  $("#hour-8 .description").val(localStorage.getItem("hour-8"));
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
   $("#hour-10 .description").val(localStorage.getItem("hour-10"));
   $("#hour-11 .description").val(localStorage.getItem("hour-11"));
@@ -76,6 +75,9 @@ $(document).ready(function () {
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
   $("#hour-20 .description").val(localStorage.getItem("hour-20"));
   $("#hour-21 .description").val(localStorage.getItem("hour-21"));
+  $("#hour-22 .description").val(localStorage.getItem("hour-22"));
+  $("#hour-23 .description").val(localStorage.getItem("hour-23"));
+  $("#hour-24 .description").val(localStorage.getItem("hour-24"));
 
   timeTracker();
 });
